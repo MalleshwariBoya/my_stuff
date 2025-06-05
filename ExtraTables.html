@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Sign-In Test</title>
+  <meta name="google-signin-client_id" content="366272328660-lsqo4q9smjsoei8d1hgiu86vi00a05da.apps.googleusercontent.com">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <h2>Test Google Sign-In</h2>
+  <div id="g_id_onload"
+       data-client_id="366272328660-lsqo4q9smjsoei8d1hgiu86vi00a05da.apps.googleusercontent.com"
+       data-context="signin"
+       data-ux_mode="popup"
+       data-callback="handleCredentialResponse">
+  </div>
+  <div class="g_id_signin" data-type="standard"></div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+      alert("✅ Google Sign-In successful! Your OAuth client is now active.");
+    }
+  </script>
+</body>
+</html>
